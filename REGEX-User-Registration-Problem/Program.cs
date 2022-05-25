@@ -14,7 +14,7 @@ namespace REGEX_User_Registration_Problem
             Console.WriteLine("Welcome to Regular Expression");
             Console.WriteLine("Enter your first name");
             string FirstName = Console.ReadLine(); // Creating user input for first name
-            Validation.FirstNameValidation(FirstName);////Calling method to validate firstname
+            Validation.FirstNameValidation(FirstName);//Calling method to validate firstname
 
         }
     }
