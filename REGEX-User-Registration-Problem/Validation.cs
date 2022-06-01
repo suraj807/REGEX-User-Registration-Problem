@@ -13,7 +13,7 @@ namespace REGEX_User_Registration_Problem
         /// First Name Validation
         /// </summary>
         /// <param name="fName"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool FirstNameValidation(string fName)
         {
             string pattern = "^[A-Z][a-z]{2,}$"; // Regex for first name validation
@@ -33,7 +33,7 @@ namespace REGEX_User_Registration_Problem
         /// Last Name Validation
         /// </summary>
         /// <param name="lName"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool LastNameValidation(string lName) // Creating a method for Last name validation
         {
             string pattern = "^[A-Z][a-z]{2,}$"; // Regex for last name validation
@@ -54,7 +54,7 @@ namespace REGEX_User_Registration_Problem
         /// Email Validation
         /// </summary>
         /// <param name="email"></param>
-        /// <returns></returns>
+        /// <returns>bool</returns>
         public static bool EmailValidation(string email)
         {
             string pattern = "^[0-9a-zA-Z]+[./+_-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9-]+[.][a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"; // Regex for Email validation
@@ -70,6 +70,46 @@ namespace REGEX_User_Registration_Problem
                 return false;
             }
         }
-
+        /// <summary>
+        /// Mobile Number Validation
+        /// </summary>
+        /// <param name="mobileNo"></param>
+        /// <returns>bool</returns>
+        public static bool MobileNumberValidation(string mobileNo)
+        {
+            string pattern = "^[9][1][ ][6-9][0-9]{9}$"; // Regex for Mobile number validation
+            //If Mobile Number entered by user is match with regex then it is valid otherwise not
+            if (Regex.IsMatch(mobileNo, pattern))
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour Mobile Number \"{mobileNo}\" is not valid");
+                return false;
+            }
+        }
+        /// <summary>
+        /// Password Rule 1 Validation
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns>bool</returns>
+        public static bool PasswordRule1Validation(string password)
+        {
+            //Rule -1 Minimum 8 characters
+            string patternForRule1 = "^[0-9a-zA-Z@#$%^&*!+=]{8,}"; // Regex for password validation rule 1
+            //If password entered by user is match with regex then it is valid otherwise not
+            if (Regex.IsMatch(password, patternForRule1))
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is valid");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"\nYour password \"{password}\" is not follow password rules");
+                return false;
+            }
+        }
     }
 }
