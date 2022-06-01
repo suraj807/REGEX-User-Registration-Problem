@@ -10,16 +10,19 @@ namespace REGEX_User_Registration_Problem
     internal class Validation
     {
 
-        public static void FirstNameValidation(string FirstName)
+        public static bool FirstNameValidation(string fName)
         {
-            string pattern = "^[A-Z][a-z]{2,}$"; // Creating REGEX pattern
-            if (Regex.IsMatch(FirstName, pattern)) //For checking regex are valid or invalid
+            string pattern = "^[A-Z][a-z]{2,}$"; // Regex for first name validation
+            //If name entered by user is match with regex then it is valid otherwise not
+            if (Regex.IsMatch(fName, pattern))
             {
-                Console.WriteLine("The First name is : " + FirstName);
+                Console.WriteLine($"\nYour first name \"{fName}\" is valid");
+                return true;
             }
             else
             {
-                Console.WriteLine("Invalid Name : " + FirstName);
+                Console.WriteLine($"\nYour first name \"{fName}\" is not valid");
+                return false;
             }
         }
     }
